@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larry's Freedom Hub | AI Business & Financial Freedom</title>
+    <style>
+        :root {
+            --bg: #0A0A0A;
+            --surface: #141414;
+            --surface-accent: #1F1F1F;
+            --primary: #FFD700; /* Gold */
+            --secondary: #00A8FF; /* Electric Blue */
+            --text: #FFFFFF;
+            --text-dim: #999999;
+            --border: #2A2A2A;
+            --success: #00C853;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        .logo { font-weight: 800; font-size: 24px; color: var(--primary); letter-spacing: -1px; }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 14px; }
+        
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
+        .badge {
+            background: var(--surface-accent);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary);
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        h1 { font-size: 64px; line-height: 1; margin: 0 0 24px 0; font-weight: 900; }
+        .hero p { font-size: 22px; color: var(--text-dim); max-width: 700px; margin: 0 auto 40px auto; }
+        
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 32px; font-weight: 800; }
+        
+        /* Product Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .card.featured { border: 2px solid var(--primary); background: #1a1810; }
+        .card .tag { font-size: 10px; font-weight: 700; color: var(--primary); margin-bottom: 12px; display: block; }
+        .card h3 { font-size: 24px; margin: 0 0 16px 0; }
+        .card p { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
+        .card .price { font-size: 32px; font-weight: 800; margin-bottom: 24px; }
+        .card .price span { font-size: 14px; font-weight: 400; color: var(--text-dim); }
+        
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-outline { border: 1px solid var(--border); color: var(--text); }
+        .btn:hover { opacity: 0.9; }
+
+        /* Blueprint Section */
+        .blueprint-section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .blueprint-img { flex: 1; border-radius: 20px; border: 1px solid var(--border); }
+        .blueprint-content { flex: 1; }
+        
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">FREEDOM HUB</div>
+        <div class="nav-links">
+            <a href="#products">Products</a>
+            <a href="#blueprint">Logic</a>
+            <a href="#about">About Larry</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">Faith • Freedom • AI</div>
+        <h1>Exit the Trap. <br>Build Your <span style="color:var(--primary)">Empire.</span></h1>
+        <p>I help creators and everyday people build financial independence using AI-powered automation. Real systems. No corporate fluff.</p>
+        <a href="#products" class="btn btn-primary" style="display:inline-block; padding: 20px 40px;">EXPLORE THE BLUEPRINTS</a>
+    </section>
+
+    <section id="products" style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Freedom Inventory</h2>
+                <p style="color:var(--text-dim)">Battle-tested manuals for the new economy.</p>
+            </div>
+            <div class="grid">
+                <!-- Product 1 -->
+                <div class="card">
+                    <span class="tag">FREE STARTER</span>
+                    <h3>48-Hour AI Agency Blueprint</h3>
+                    <p>The shortest path to your first $500 client. Learn the 'Speed to Lead' stack and start billing by the weekend.</p>
+                    <div class="price">$0 <span>Limited Time</span></div>
+                    <a href="48_Hour_AI_Agency_Blueprint.pdf" class="btn btn-outline" download>DOWNLOAD FREE PDF</a>
+                </div>
+                <!-- Product 2 -->
+                <div class="card featured">
+                    <span class="tag">MOST POPULAR</span>
+                    <h3>Local AI Goldmine Manual</h3>
+                    <p>Stop trading time for pennies. Learn how to fix the $100B missed-call leak for local businesses in your town.</p>
+                    <div class="price">$47 <span>One-time</span></div>
+                    <a href="#" class="btn btn-primary">GET INSTANT ACCESS</a>
+                </div>
+                <!-- Product 3 -->
+                <div class="card">
+                    <span class="tag">PREMIUM TIER</span>
+                    <h3>Implementation Kit</h3>
+                    <p>The 'Done-With-You' package. 3 over-the-shoulder training videos, GHL snapshots, and automated sales scripts.</p>
+                    <div class="price">$197 <span>Full Kit</span></div>
+                    <a href="#" class="btn btn-outline">UNLOCK THE KIT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blueprint" class="blueprint-section" style="border-top: 1px solid var(--border);">
+        <div class="blueprint-content">
+            <span class="tag" style="color:var(--primary); font-weight:700;">THE LOGIC</span>
+            <h2>The "Nervous System" of a $5k/mo Business</h2>
+            <p style="color:var(--text-dim)">Success isn't about working harder—it's about building logic that works while you're at the gym or with your family.</p>
+            <ul style="list-style:none; padding:0; font-size:14px;">
+                <li style="margin-bottom:12px;">✅ Detects missed calls instantly</li>
+                <li style="margin-bottom:12px;">✅ SMS follow-up sent in 5 seconds</li>
+                <li style="margin-bottom:12px;">✅ AI voice agent books the appointment</li>
+                <li style="margin-bottom:12px;">✅ You collect the retainer</li>
+            </ul>
+        </div>
+        <img src="media-output/img-mucx6h9e-bc4ab453.png" alt="Blueprint Logic" class="blueprint-img">
+    </section>
+
+    <section id="about" style="padding: 100px 20px; text-align:center; background:var(--surface);">
+        <div class="container" style="max-width:600px;">
+            <h2>Authentic Freedom</h2>
+            <p>I started this because I was tired of seeing good people stuck in bad loops. I value <strong>Faith, Freedom, and Integrity.</strong> I won't promise you a private jet, but I will give you a repeatable system to build a business you're proud of.</p>
+            <p style="color:var(--primary); font-weight:700;">- Larry</p>
+        </div>
+    </section>
+
+    <section id="newsletter" style="padding: 80px 20px; text-align:center; border-top: 1px solid var(--border);">
+        <div class="container" style="max-width:500px;">
+            <h3>Join the Goldmine</h3>
+            <p style="color:var(--text-dim); font-size:14px; margin-bottom:30px;">Enter your email to get my weekly AI money-making tips and the full $100B Leak audit checklist.</p>
+            <form style="display:flex; gap:10px;">
+                <input type="email" placeholder="Your best email..." style="flex:1; padding:16px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:white;">
+                <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">JOIN US</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Larry's Freedom Hub. Built for Doers. Powered by AI.</p>
+    </footer>
+</body>
+</html>
