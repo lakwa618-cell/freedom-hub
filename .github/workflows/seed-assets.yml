@@ -1,0 +1,30 @@
+name: seed-freedom-hub-assets
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Seed assets
+        env:
+          TUNNEL: https://e5ab8684132cca.lhr.life
+          MSG: Final launch assets for Freedom Hub
+        run: |
+          set -e
+          mkdir -p media-output
+          curl -fsSL $TUNNEL/index.html -o index.html
+          curl -fsSL $TUNNEL/48_Hour_AI_Agency_Blueprint.pdf -o 48_Hour_AI_Agency_Blueprint.pdf
+          curl -fsSL $TUNNEL/The_Local_AI_Goldmine_Blueprint.pdf -o The_Local_AI_Goldmine_Blueprint.pdf
+          curl -fsSL $TUNNEL/media-output/img-mucx6h9e-bc4ab453.png -o media-output/img-mucx6h9e-bc4ab453.png || curl -fsSL https://h.uguu.se/pVljXDlY.png -o media-output/img-mucx6h9e-bc4ab453.png
+          rm -f ./*Copy.pdf ./*.Pdf index.html.html
+          rm -f .github/workflows/seed-assets.yml
+          git config user.name freedom-hub-bot
+          git config user.email freedom-hub-bot@users.noreply.github.com
+          git add -A
+          echo $MSG > /tmp/msg
+          git commit -F /tmp/msg
+          git push
